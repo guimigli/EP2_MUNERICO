@@ -38,6 +38,9 @@ class ex1:
             if (err[i] > aux): aux = err[i]
         return aux
     
+    """
+    Função que aproxima o valor de yk de y para a EDO fornecida utilizando o método de Euler implícito.
+    """
     def EI(lam, n):
         y0 = 1
         h = 1/n     #h = Tamanho do passo: (1-0)/n
