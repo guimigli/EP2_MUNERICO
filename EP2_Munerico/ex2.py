@@ -21,7 +21,7 @@ class ex2:
         x = []      #Lista para os valores de t
         ex = []     #Lista para os valores da solução exata para cada t
         #err = []    #Lista para os erros
-        exata = C * (np.exp(-lam * t) + lam * np.sin(t) - np.cos(t)) #Equação para o valor exato
+        exata = C * (np.exp(-lam*t)+ lam * np.sin(t) - np.cos(t)) #Equação para o valor exato
         x.append(t)
         ex.append(exata)
         z.append(y0)
@@ -30,6 +30,7 @@ class ex2:
             y1 = (y0 * (1 - (h * lam))) + (h * lam * np.sin(t))
             y0 = y1
             t += h
+            exata = C * (np.exp(-lam*t)+ lam * np.sin(t) - np.cos(t))
             x.append(t)
             ex.append(exata)
             z.append(y1)
@@ -71,7 +72,7 @@ class ex2:
 #1.2.1
 fig = plt.figure()
 numCol = 5
-lambd = 1000
+lambd = 10
 limXI = 0
 limXF = 8
 limYI = -1.01
@@ -108,7 +109,7 @@ plt.legend(loc='upper right')
 plt.subplot(numCol,1,4)
 plt.xlim(limXI,limXF)
 plt.ylim(limYI,limYF)
-ex2.EE(lambd,4000)
+ex2.EE(lambd,50)
 plt.title('EE: lambda=10000 | n=10050')
 plt.ylabel('Y(t)')
 plt.legend(loc='upper right')
